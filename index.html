@@ -14,8 +14,13 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <h1>SIRPI FERTILITY</h1>
-                    <p class="tagline">Hope. Care. Success.</p>
+                    <!-- Replace 'logo.png' with your actual logo file name -->
+                    <img src="image/logo.png" alt="SIRPI Fertility Centre" class="logo-image">
+                    <!-- Fallback text logo (hidden when image loads) -->
+                    <!-- <div class="logo-text">
+                        <h1>SIRPI FERTILITY</h1>
+                        <p class="tagline">Hope. Care. Success.</p>
+                    </div> -->
                 </div>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
                     <i class="fas fa-bars"></i>
@@ -63,7 +68,7 @@
                     <p>Years of Excellence</p>
                 </div>
                 <div class="stat">
-                    <h3>90-95%</h3>
+                    <h3>95%</h3>
                     <p>Success Rate</p>
                 </div>
                 <div class="stat">
@@ -71,7 +76,7 @@
                     <p>Happy Families</p>
                 </div>
                 <div class="stat">
-                    <h3>Chennai</h3>
+                    <h3>Multiple</h3>
                     <p>Locations</p>
                 </div>
             </div>
@@ -272,6 +277,7 @@
                         <li>Male factor infertility concerns</li>
                         <li>Previous unsuccessful IVF attempts</li>
                     </ul>
+                
                 </div>
 
                 <div class="guidance-card">
@@ -357,6 +363,18 @@
                         </div>
                     </div>
                 </div>
+                <!-- Expert Consultation CTA -->
+<div class="expert-consultation-cta">
+    <div class="cta-content">
+        <i class="fas fa-user-md"></i>
+        <h3>Need Medical Guidance?</h3>
+        <p>Talk with our experts to make your medical journey easy and stress-free</p>
+        <a href="https://superb-cascaron-2bf5dd.netlify.app/" target="_blank" class="btn-expert">
+            <i class="fas fa-comments"></i> Consult Our Expert Now
+        </a>
+    </div>
+</div>
+
             </div>
         </div>
     </section>
@@ -368,6 +386,31 @@
                 <h2>Success Stories</h2>
                 <div class="underline"></div>
                 <p>Real journeys, real hope - Stories from our patients</p>
+            </div>
+
+            <!-- Patient Testimonial Images Gallery -->
+            <div class="testimonial-gallery">
+                <h3 class="gallery-title">Heartfelt Messages from Our Patients</h3>
+                <div class="testimonial-images">
+                    <div class="testimonial-image-card">
+                        <img src="image/testi1.jpeg" alt="Patient Testimonial 1" loading="lazy">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-image-card">
+                        <img src="image/testi2.jpeg"alt="Patient Testimonial 2" loading="lazy">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-image-card">
+                        <img src="image/testi3.jpeg" alt="Patient Testimonial 3" loading="lazy">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>                
+                </div>
             </div>
 
             <div class="stories-grid">
@@ -429,7 +472,7 @@
             <div class="success-stats">
                 <div class="stat-box">
                     <i class="fas fa-chart-line"></i>
-                    <h3>90-95%</h3>
+                    <h3>95%</h3>
                     <p>Success Rate</p>
                 </div>
                 <div class="stat-box">
@@ -450,6 +493,17 @@
             </div>
         </div>
     </section>
+
+    <!-- Lightbox Modal for Testimonial Images -->
+    <div id="testimonialLightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage" alt="Testimonial Image">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" id="prevImage" aria-label="Previous image">&#10094;</button>
+            <button class="lightbox-next" id="nextImage" aria-label="Next image">&#10095;</button>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
