@@ -286,3 +286,139 @@ if (mobileAppointmentBtn) {
 console.log('%c🏥 SIRPI Fertility and Women\'s Centre', 'color: #2563eb; font-size: 20px; font-weight: bold;');
 console.log('%cDeveloped with ❤️ for Dr. M. Nancy Anitha', 'color: #7c3aed; font-size: 14px;');
 console.log('%cFor any technical support, please contact the web development team.', 'color: #6b7280; font-size: 12px;');
+
+// ===== BOOKING MODAL FUNCTIONALITY =====
+const bookingModal = document.getElementById('bookingModal');
+const bookingClose = document.querySelector('.booking-close');
+const whatsappBookingForm = document.getElementById('whatsappBookingForm');
+
+// Get all booking buttons
+const bookingButtons = document.querySelectorAll('a[href="#contact"], .cta-button, .mobile-appointment');
+
+// Set minimum date to today
+const dateInput = document.getElementById('preferredDate');
+if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+}
+
+// Open modal when clicking booking buttons
+bookingButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        // Only prevent default if it's a booking button (not other #contact links)
+        if (button.textContent.toLowerCase().includes('book') || 
+            button.textContent.toLowerCase().includes('consultation') ||
+            button.classList.contains('mobile-appointment')) {
+            e.preventDefault();
+            openBookingModal();
+        }
+    });
+});
+
+function openBookingModal() {
+    bookingModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeBookingModal() {
+    bookingModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking X
+bookingClose.addEventListener('click', closeBookingModal);
+
+// Close modal when clicking outside
+bookingModal.addEventListener('click', (e) => {
+    if (e.target === bookingModal) {
+        closeBookingModal();
+    }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && bookingModal.classList.contains('active')) {
+        closeBookingModal();
+    }
+});
+
+// Handle form submission
+whatsappBookingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById('patientName').value;
+    const contact = document.getElementById('contactNumber').value;
+    const age = document.getElementById('patientAge').value;
+    const email = document.getElementById('patientEmail').value;
+    const country = document.getElementById('patientCountry').value;
+    const service = document.getElementById('serviceRequired').value;
+    const date = document.getElementById('preferredDate').value;
+    const notes = document.getElementById('additionalNotes').value;
+
+    // Format date if provided
+    let formattedDate = 'Not specified';
+    if (date) {
+        const dateObj = new Date(date);
+        formattedDate = dateObj.toLocaleDateString('en-IN', { 
+            day: '2-digit', 
+            month: 'short', 
+            year: 'numeric' 
+        });
+    }
+
+    // Create WhatsApp message
+    let message = `*🏥 NEW CONSULTATION BOOKING*\n\n`;
+    message += `*Patient Details:*\n`;
+    message += `👤 Name: ${name}\n`;
+    message += `📞 Contact: ${contact}\n`;
+    message += `🎂 Age: ${age} years\n`;
+    if (email) message += `📧 Email: ${email}\n`;
+    message += `🌍 Country: ${country}\n\n`;
+    message += `*Service Required:*\n${service}\n\n`;
+    message += `*Preferred Date:* ${formattedDate}\n`;
+    if (notes) message += `\n*Additional Notes:*\n${notes}`;
+    message += `\n\n_Sent from SIRPI Fertility Website_`;
+
+    // Encode message for WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappNumber = '918099881940'; // Your WhatsApp number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+
+    // Reset form and close modal
+    whatsappBookingForm.reset();
+    closeBookingModal();
+
+    // Show success message
+    alert('Thank you! Redirecting to WhatsApp. Please send the message to complete your booking.');
+});
+
+// Floatoing Button
+
+// ===== FLOATING COUNSELLOR FUNCTIONALITY =====
+const floatingTrigger = document.getElementById('floatingTrigger');
+const floatingCounsellor = document.getElementById('floatingCounsellor');
+const closeCounsellor = document.getElementById('closeCounsellor');
+
+floatingTrigger.addEventListener('click', () => {
+    floatingCounsellor.classList.add('active');
+    floatingTrigger.style.display = 'none';
+});
+
+closeCounsellor.addEventListener('click', () => {
+    floatingCounsellor.classList.remove('active');
+    floatingTrigger.style.display = 'flex';
+});
+
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+    if (!floatingCounsellor.contains(e.target) && 
+        !floatingTrigger.contains(e.target) && 
+        floatingCounsellor.classList.contains('active')) {
+        floatingCounsellor.classList.remove('active');
+        floatingTrigger.style.display = 'flex';
+    }
+});

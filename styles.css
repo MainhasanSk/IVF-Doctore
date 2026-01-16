@@ -1162,6 +1162,7 @@ header {
 }
 
 /* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
 footer {
     background: var(--text-dark);
     color: var(--white);
@@ -1173,12 +1174,38 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 40px;
+    align-items: start;
 }
 
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 20px;
 }
+
+/* Footer Logo */
+.footer-logo {
+    margin-bottom: -30px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-logo-image {
+    max-height: 150px;
+    max-width: 200px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    margin-top: -50px;
+}
+
+
+.footer-section:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 
 .footer-section p {
     color: #9ca3af;
@@ -1226,6 +1253,24 @@ footer {
 .footer-bottom a:hover {
     color: var(--white);
 }
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-logo-image {
+        max-height: 90px;
+        max-width: 180px;
+    }
+}
+
 
 /* ===== BACK TO TOP ===== */
 .back-to-top {
@@ -1650,5 +1695,620 @@ footer {
     .btn-expert {
         padding: 12px 30px;
         font-size: 1rem;
+    }
+}
+
+/* ===== BOOKING MODAL ===== */
+/* ===== BOOKING MODAL ===== */
+.booking-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s;
+    padding: 20px;
+}
+
+.booking-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.booking-modal-content {
+    background: var(--white);
+    padding: 0;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s;
+    position: relative;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.booking-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: var(--white);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    transition: transform 0.2s;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.booking-close:hover {
+    transform: rotate(90deg);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.booking-header {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 25px 20px 20px;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.booking-header i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.booking-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.booking-header p {
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+#whatsappBookingForm {
+    padding: 25px 20px 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.btn-submit-booking {
+    width: 100%;
+    background: #25D366;
+    color: var(--white);
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-submit-booking:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-submit-booking i {
+    font-size: 1.2rem;
+}
+
+/* Scrollbar styling for modal */
+.booking-modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.booking-modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.booking-modal-content::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .booking-modal {
+        padding: 10px;
+    }
+
+    .booking-modal-content {
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 12px;
+    }
+
+    .booking-header {
+        padding: 20px 15px 15px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .booking-header i {
+        font-size: 2rem;
+    }
+
+    .booking-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .booking-header p {
+        font-size: 0.85rem;
+    }
+
+    #whatsappBookingForm {
+        padding: 20px 15px 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 9px 11px;
+        font-size: 0.85rem;
+    }
+
+    .form-group textarea {
+        min-height: 60px;
+    }
+
+    .booking-close {
+        right: 10px;
+        top: 10px;
+        font-size: 24px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn-submit-booking {
+        padding: 11px 18px;
+        font-size: 0.95rem;
+        margin-top: 5px;
+    }
+
+    .btn-submit-booking i {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .booking-modal {
+        padding: 5px;
+    }
+
+    .booking-header {
+        padding: 18px 12px 12px;
+    }
+
+    .booking-header h2 {
+        font-size: 1.2rem;
+    }
+
+    #whatsappBookingForm {
+        padding: 15px 12px 12px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .btn-submit-booking {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/*Floating Button */
+/* ===== BEAUTIFUL FLOATING MEDICAL CARD ===== */
+.floating-medical-card {
+    position: fixed !important;
+    bottom: 2rem !important;
+    left: 2rem !important;
+    width: 340px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.25);
+    z-index: 9999 !important;
+    animation: floatIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 2px solid rgba(37, 99, 235, 0.1);
+    overflow: hidden;
+}
+
+@keyframes floatIn {
+    0% {
+        transform: translateY(100px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.floating-card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    animation: rotateGlow 15s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.medical-icon-wrapper {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.icon-circle i {
+    font-size: 2rem;
+    color: var(--white);
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border: 3px solid rgba(37, 99, 235, 0.5);
+    border-radius: 50%;
+    animation: pulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.pulse-ring-delay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border: 3px solid rgba(124, 58, 237, 0.5);
+    border-radius: 50%;
+    animation: pulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1s infinite;
+}
+
+@keyframes pulseRing {
+    0% {
+        width: 70px;
+        height: 70px;
+        opacity: 1;
+    }
+    100% {
+        width: 110px;
+        height: 110px;
+        opacity: 0;
+    }
+}
+
+.medical-content {
+    text-align: center;
+}
+
+.medical-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShine 3s ease-in-out infinite;
+}
+
+@keyframes titleShine {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.medical-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.medical-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.medical-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.medical-cta-btn:hover::before {
+    left: 100%;
+}
+
+.medical-cta-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.5);
+}
+
+.medical-cta-btn i {
+    transition: transform 0.3s;
+}
+
+.medical-cta-btn:hover i {
+    transform: translateX(5px);
+}
+
+.close-medical-card {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 3;
+}
+
+.close-medical-card:hover {
+    background: rgba(239, 68, 68, 0.1);
+    transform: rotate(90deg);
+}
+
+.close-medical-card i {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.close-medical-card:hover i {
+    color: #ef4444;
+}
+
+.floating-medical-card::after {
+    content: '✨';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    animation: sparkle 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes sparkle {
+    0%, 100% { 
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .floating-medical-card {
+        bottom: 6rem !important;
+        right: 1rem !important;
+        left: 1rem !important;
+        width: auto !important;
+        max-width: 340px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .medical-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon-circle i {
+        font-size: 1.7rem;
+    }
+
+    .pulse-ring,
+    .pulse-ring-delay {
+        width: 60px;
+        height: 60px;
+    }
+
+    .medical-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .medical-description {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .medical-cta-btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-medical-card {
+        bottom: 5.5rem !important;
+        padding: 18px;
+    }
+
+    .medical-title {
+        font-size: 1rem;
+    }
+
+    .medical-description {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .medical-cta-btn {
+        padding: 9px 20px;
+        font-size: 0.85rem;
     }
 }

@@ -600,9 +600,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>SIRPI FERTILITY</h3>
-                    <p>Your trusted partner in the journey to parenthood. Expert care, advanced technology, and compassionate support.</p>
-                </div>
+    <div class="footer-logo">
+        <img src="image/logo.png" alt="SIRPI Fertility Centre" class="footer-logo-image">
+    </div>
+    <p>Your trusted partner in the journey to parenthood. Expert care, advanced technology, and compassionate support.</p>
+</div>
+
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
@@ -624,8 +627,8 @@
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-envelope"></i> info@sirpifertility.com</li>
+                        <li><i class="fas fa-phone"></i>+91 80998 81940</li>
+                        <li><i class="fas fa-envelope"></i> chennaihospital4@gmail.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> [Your Location]</li>
                     </ul>
                 </div>
@@ -640,6 +643,121 @@
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+<!-- Booking Form Modal -->
+<div id="bookingModal" class="booking-modal">
+    <div class="booking-modal-content">
+        <span class="booking-close">&times;</span>
+        <div class="booking-header">
+            <i class="fas fa-calendar-check"></i>
+            <h2>Book Your Consultation</h2>
+            <p>Fill in your details and we'll contact you shortly</p>
+        </div>
+        <form id="whatsappBookingForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="patientName">Full Name *</label>
+                    <input type="text" id="patientName" name="patientName" required placeholder="Enter your full name">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number *</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" required placeholder="+91 98765 43210" pattern="[0-9+\s-]{10,15}">
+                </div>
+                <div class="form-group">
+                    <label for="patientAge">Age *</label>
+                    <input type="number" id="patientAge" name="patientAge" required min="18" max="65" placeholder="Age">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="patientEmail">Email Address</label>
+                    <input type="email" id="patientEmail" name="patientEmail" placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="patientCountry">Country *</label>
+                    <select id="patientCountry" name="patientCountry" required>
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="UAE">UAE</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="serviceRequired">Service Required *</label>
+                    <select id="serviceRequired" name="serviceRequired" required>
+                        <option value="">Select Service</option>
+                        <option value="IVF Treatment">IVF Treatment</option>
+                        <option value="ICSI">ICSI</option>
+                        <option value="Fertility Consultation">Fertility Consultation</option>
+                        <option value="Laparoscopy">Laparoscopy</option>
+                        <option value="Hysteroscopy">Hysteroscopy</option>
+                        <option value="Male Infertility Treatment">Male Infertility Treatment</option>
+                        <option value="Ovarian Rejuvenation">Ovarian Rejuvenation</option>
+                        <option value="PRP Treatment">PRP Treatment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="preferredDate">Preferred Consultation Date</label>
+                    <input type="date" id="preferredDate" name="preferredDate" min="">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="additionalNotes">Additional Notes</label>
+                    <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Any specific concerns or questions..."></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-submit-booking">
+                <i class="fab fa-whatsapp"></i> Send to WhatsApp
+            </button>
+        </form>
+    </div>
+</div>
+<!-- Floating Counsellor Button -->
+<!-- Beautiful Animated Floating Medical Counsellor -->
+<div class="floating-medical-card">
+    <div class="floating-card-glow"></div>
+    <div class="medical-icon-wrapper">
+        <div class="icon-circle">
+            <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring-delay"></div>
+    </div>
+    <div class="medical-content">
+        <h4 class="medical-title">Free Medical Counselling</h4>
+        <p class="medical-description">
+            Our experienced & certified medical counsellors are waiting to listen, understand, and make your medical journey easier.
+        </p>
+        <a href="https://superb-cascaron-2bf5dd.netlify.app/" target="_blank" class="medical-cta-btn">
+            <span>Click Here to Talk</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    <button class="close-medical-card" onclick="this.parentElement.style.display='none'">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
+
 
     <script src="script.js"></script>
 </body>
