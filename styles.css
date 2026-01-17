@@ -103,6 +103,7 @@ header {
 
 .logo-text {
     display: none;
+    color: #1f2937;
 }
 
 .logo-image[src="logo.png"]:not([src*="http"]) ~ .logo-text {

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Consultation Form - SIRPI Fertility Centre</title>
+    <link rel="stylesheet" href="appointment-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="appointment-styles.css">
+</head>
+<body>
+    <div class="consultation-container">
+        <!-- Professional Header -->
+       <!-- Header & Navigation -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="image/logo.png" alt="SIRPI Fertility Centre" class="logo-image">
+                <div class="logo-text">
+                    <h1>SIRPI FERTILITY</h1>
+                    <p class="tagline">Hope. Care. Success.</p>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#guidance" class="nav-link">Medical Guidance</a></li>
+                <li><a href="index.html#success" class="nav-link">Success Stories</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="tel:+918099881940" class="cta-button desktop-only">
+                <i class="fas fa-phone"></i> Book Consultation
+            </a>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Fixed Bottom Buttons -->
+<div class="mobile-bottom-buttons">
+    <a href="tel:+918099881940" class="mobile-btn mobile-call">
+        <i class="fas fa-phone-alt"></i>
+        <span>Call Now</span>
+    </a>
+    <a href="index.html#contact" class="mobile-btn mobile-appointment">
+        <i class="fas fa-calendar-check"></i>
+        <span>Book Appointment</span>
+    </a>
+</div>
+
+        <!-- Introduction Video Section -->
+        <section class="video-section">
+            <div class="section-container">
+                <div class="section-title">
+                    <!-- <i class="fas fa-play-circle"></i> -->
+                    <h2>Welcome to SIRPI Fertility Centre</h2>
+                    <p>Watch our introduction to understand our approach to personalized fertility care</p>
+                </div>
+                <div class="video-wrapper">
+                    <iframe 
+                        src="video.mp4" 
+                        title="SIRPI Fertility Centre - Your Partner in Parenthood"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+<!-- Medical Consultation Form Section -->
+<section class="form-section">
+    <div class="section-container">
+        <div class="form-header-pro">
+            
+            <h2>Make Your Medical Journey easy</h2>
+            <p>Complete the form below to schedule your consultation with our fertility specialists</p>
+            <div class="form-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+
+        <form id="medicalConsultationForm" class="consultation-form-pro">
+            
+            <!-- Section 1: Treatment Details -->
+            <div class="form-card">
+                <div class="card-header">
+                    <span class="step-badge">Step 1</span>
+                    <h3><i class="fas fa-heartbeat"></i> Treatment Information</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-field">
+                        <label for="treatment">What brings you to us today? *</label>
+                        <div class="custom-select">
+                            <select id="treatment" name="treatment" required>
+                                <option value="">Select your primary concern</option>
+                                <option value="Fertility Treatment">🌸 Fertility Treatment</option>
+                                <option value="Maternity Care">🤰 Maternity Care</option>
+                                <option value="Gynae Endoscopy">🔬 Gynae Endoscopy</option>
+                                <option value="Cosmetic Gynaecology">💫 Cosmetic Gynaecology</option>
+                                <option value="General Consultation">💬 General Consultation</option>
+                                <option value="Others">📋 Others</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Are you a new or existing patient? *</label>
+                        <div class="toggle-group">
+                            <input type="radio" id="newPatient" name="patientType" value="New Patient" required>
+                            <label for="newPatient" class="toggle-option">
+                                <i class="fas fa-user-plus"></i>
+                                <span>New Patient</span>
+                            </label>
+                            
+                            <input type="radio" id="existingPatient" name="patientType" value="Existing Patient">
+                            <label for="existingPatient" class="toggle-option">
+                                <i class="fas fa-user-check"></i>
+                                <span>Existing Patient</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Schedule -->
+            <div class="form-card">
+                <div class="card-header">
+                    <span class="step-badge">Step 2</span>
+                    <h3><i class="fas fa-calendar-check"></i> Preferred Appointment Time</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-grid-2">
+                        <div class="form-field">
+                            <label for="appointmentDate">Select Date *</label>
+                            <div class="input-group">
+                                <i class="fas fa-calendar-day"></i>
+                                <input type="date" id="appointmentDate" name="appointmentDate" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Select Time Slot *</label>
+                        <div class="time-slots">
+                            <input type="radio" id="slot1" name="timeSlot" value="Morning (9:00 AM - 11:00 AM)" required>
+                            <label for="slot1" class="slot-card">
+                                <i class="fas fa-sun"></i>
+                                <strong>Morning</strong>
+                                <span>9:00 AM - 11:00 AM</span>
+                            </label>
+
+                            <input type="radio" id="slot2" name="timeSlot" value="Noon (11:00 AM - 2:00 PM)">
+                            <label for="slot2" class="slot-card">
+                                <i class="fas fa-cloud-sun"></i>
+                                <strong>Noon</strong>
+                                <span>11:00 AM - 2:00 PM</span>
+                            </label>
+
+                            <input type="radio" id="slot3" name="timeSlot" value="Afternoon (2:00 PM - 5:00 PM)">
+                            <label for="slot3" class="slot-card">
+                                <i class="fas fa-sun"></i>
+                                <strong>Afternoon</strong>
+                                <span>2:00 PM - 5:00 PM</span>
+                            </label>
+
+                            <input type="radio" id="slot4" name="timeSlot" value="Evening (5:00 PM - 7:00 PM)">
+                            <label for="slot4" class="slot-card">
+                                <i class="fas fa-moon"></i>
+                                <strong>Evening</strong>
+                                <span>5:00 PM - 7:00 PM</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Personal Details -->
+            <div class="form-card">
+                <div class="card-header">
+                    <span class="step-badge">Step 3</span>
+                    <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-field">
+                        <label for="fullName">Full Name (as per ID/Passport) *</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your complete name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-field">
+                            <label for="email">Email Address *</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="contactNumber">Contact Number *</label>
+                            <div class="input-group">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="contactNumber" name="contactNumber" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-field">
+                            <label for="age">Age *</label>
+                            <div class="input-group">
+                                <i class="fas fa-birthday-cake"></i>
+                                <input type="number" id="age" name="age" min="18" max="65" placeholder="Your age" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="nationality">Nationality *</label>
+                            <div class="input-group">
+                                <i class="fas fa-flag"></i>
+                                <input type="text" id="nationality" name="nationality" placeholder="Your nationality" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Location -->
+            <div class="form-card">
+                <div class="card-header">
+                    <span class="step-badge">Step 4</span>
+                    <h3><i class="fas fa-map-marked-alt"></i> Location & Travel Details</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-grid-2">
+                        <div class="form-field">
+                            <label for="country">Country of Residence *</label>
+                            <div class="input-group">
+                                <i class="fas fa-globe-asia"></i>
+                                <input type="text" id="country" name="country" placeholder="Your country" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="city">City *</label>
+                            <div class="input-group">
+                                <i class="fas fa-city"></i>
+                                <input type="text" id="city" name="city" placeholder="Your city" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Do you require visa assistance? *</label>
+                        <div class="visa-toggle">
+                            <input type="radio" id="visaYes" name="visaAssistance" value="Yes, I need visa invitation letter" required>
+                            <label for="visaYes" class="visa-option">
+                                <div class="visa-icon">
+                                    <i class="fas fa-passport"></i>
+                                </div>
+                                <div class="visa-info">
+                                    <strong>Yes, I need assistance</strong>
+                                    <small>We'll provide visa invitation letter</small>
+                                </div>
+                                <i class="fas fa-check-circle check-icon"></i>
+                            </label>
+
+                            <input type="radio" id="visaNo" name="visaAssistance" value="No visa assistance needed">
+                            <label for="visaNo" class="visa-option">
+                                <div class="visa-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div class="visa-info">
+                                    <strong>No, I don't need assistance</strong>
+                                    <small>I have valid visa or I'm a local resident</small>
+                                </div>
+                                <i class="fas fa-check-circle check-icon"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Medical History -->
+            <div class="form-card">
+                <div class="card-header">
+                    <span class="step-badge">Step 5</span>
+                    <h3><i class="fas fa-file-medical"></i> Medical History</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-field">
+                        <label for="medicalHistory">Share your medical concerns (Optional)</label>
+                        <textarea id="medicalHistory" name="medicalHistory" rows="5" placeholder="Please describe:&#10;• Your medical history&#10;• Current symptoms or concerns&#10;• Previous treatments&#10;• Questions for our specialist&#10;&#10;This helps us prepare better for your consultation."></textarea>
+                        <div class="field-hint">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>The more details you share, the better we can assist you</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy & Submit -->
+            <div class="form-footer-section">
+                <div class="privacy-box">
+                    <div class="privacy-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="privacy-text">
+                        <h4>Your Privacy Matters</h4>
+                        <p>All information is encrypted and confidential. We follow HIPAA guidelines and medical privacy regulations.</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn-pro">
+                    <span class="btn-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </span>
+                    <span class="btn-text">
+                        <strong>Submit via WhatsApp</strong>
+                        <small>Secure & instant delivery</small>
+                    </span>
+                    <span class="btn-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </button>
+
+                <p class="form-note">
+                    <i class="fas fa-info-circle"></i>
+                    After clicking submit, you'll be redirected to WhatsApp where you can review and send your consultation request
+                </p>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<!-- What We Provide Section -->
+<section class="ivf-support-section">
+    <div class="ivf-support-container">
+        <div class="ivf-support-header">
+            <h2>Your Complete IVF Support Partner</h2>
+            <p>We provide end-to-end, personalized assistance for your entire IVF journey – from your first inquiry until you safely return home with your baby.</p>
+        </div>
+
+        <div class="ivf-stats">
+            <div class="ivf-stat-card">
+                <h3>1000+</h3>
+                <p>IVF journeys assisted with complete coordination and care.</p>
+            </div>
+            <div class="ivf-stat-card">
+                <h3>360°</h3>
+                <p>Comprehensive medical, travel, and stay support under one roof.</p>
+            </div>
+            <div class="ivf-stat-card">
+                <h3>24/7</h3>
+                <p>Dedicated coordination team for international and domestic patients.</p>
+            </div>
+        </div>
+
+        <div class="ivf-grid">
+            <div class="ivf-item">
+                <h3>Visa & Travel Assistance</h3>
+                <ul>
+                    <li>Formal visa invitation letters for patients and companions.</li>
+                    <li>Guidance on travel dates based on your treatment plan.</li>
+                    <li>Airport pickup and drop coordination on request.</li>
+                </ul>
+            </div>
+
+            <div class="ivf-item">
+                <h3>Stay & Comfort</h3>
+                <ul>
+                    <li>Assistance in booking affordable and comfortable rooms or hotels near the clinic.</li>
+                    <li>Options from budget-friendly stays to premium hotels based on your preference.</li>
+                    <li>Support for long-stay arrangements during IVF cycles and pregnancy care.</li>
+                </ul>
+            </div>
+
+            <div class="ivf-item">
+                <h3>IVF Journey Coordination</h3>
+                <ul>
+                    <li>Complete A to Z planning of your IVF treatment schedule.</li>
+                    <li>Pre-arrival reports review and personalized treatment mapping.</li>
+                    <li>Appointment scheduling, scan planning, and procedure coordination.</li>
+                </ul>
+            </div>
+
+            <div class="ivf-item">
+                <h3>On-Ground Patient Support</h3>
+                <ul>
+                    <li>Dedicated medical counsellor to explain each step of your journey.</li>
+                    <li>Language support and local guidance for outstation and international patients.</li>
+                    <li>Help with pharmacy, diagnostics, and follow-up visit planning.</li>
+                </ul>
+            </div>
+
+            <div class="ivf-item">
+                <h3>Financial Transparency</h3>
+                <ul>
+                    <li>Clear explanation of IVF package costs before you travel.</li>
+                    <li>No hidden charges – step-wise cost breakdown of your plan.</li>
+                    <li>Guidance to plan your budget effectively for the entire journey.</li>
+                </ul>
+            </div>
+
+            <div class="ivf-item">
+                <h3>Post-Treatment Follow-Up</h3>
+                <ul>
+                    <li>Digital follow-up consultations after you return to your home country.</li>
+                    <li>Guidance on medications, reports, and pregnancy support.</li>
+                    <li>Long-term care and support for you and your growing family.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ivf-note">
+            <i class="fas fa-heart"></i>
+            <p>Our goal is to ensure that you focus only on your treatment and emotional well-being – while our team takes care of everything else in your IVF journey.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Professional Footer -->
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="image/logo.png" alt="SIRPI Fertility Centre" class="footer-logo-image">
+                </div>
+                <p>Your trusted partner in the journey to parenthood. Expert care, advanced technology, and compassionate support.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#success">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#services">IVF Treatment</a></li>
+                    <li><a href="index.html#services">ICSI</a></li>
+                    <li><a href="index.html#services">Laparoscopy</a></li>
+                    <li><a href="index.html#services">Fertility Counseling</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +91 80998 81940</li>
+                    <li><i class="fas fa-envelope"></i> info@sirpifertility.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> [Your Location]</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SIRPI Fertility and Women's Centre. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+    </div>
+
+    <script src="appointment-script.js"></script>
+</body>
+</html>
