@@ -1230,3 +1230,596 @@ textarea:focus {
         padding: 18px 15px;
     }
 }
+
+/* ===== IMPROVED MOBILE RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        height: 70px;
+    }
+
+    .logo-image {
+        max-height: 50px;
+        max-width: 150px;
+    }
+
+    /* Video section */
+    .video-section {
+        padding: 40px 15px;
+        margin-top: 70px;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+    }
+
+    .section-title i {
+        font-size: 2.5rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-title p {
+        font-size: 1rem;
+    }
+
+    .video-wrapper {
+        border-radius: 16px;
+    }
+
+    /* Form section */
+    .form-section {
+        padding: 40px 15px 100px;
+    }
+
+    .section-container {
+        padding: 0 10px;
+    }
+
+    .form-header-pro {
+        margin-bottom: 40px;
+    }
+
+    .header-icon-wrapper {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+
+    .header-icon-wrapper i {
+        font-size: 2.2rem;
+    }
+
+    .form-header-pro h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-header-pro p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Form cards */
+    .form-card {
+        padding: 25px 18px;
+        margin-bottom: 20px;
+        border-radius: 18px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .step-badge {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Form fields */
+    .form-field {
+        margin-bottom: 20px;
+    }
+
+    .form-field label {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Input groups */
+    .input-group input {
+        padding: 14px 18px 14px 45px;
+        font-size: 0.95rem;
+    }
+
+    .input-group i {
+        left: 16px;
+        font-size: 1rem;
+    }
+
+    .custom-select select {
+        padding: 14px 45px 14px 18px;
+        font-size: 0.95rem;
+    }
+
+    /* Toggle group */
+    .toggle-group {
+        flex-direction: column;
+        gap: 10px;
+        padding: 6px;
+    }
+
+    .toggle-option {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+
+    .toggle-option i {
+        font-size: 1.1rem;
+    }
+
+    /* Time slots - Stack vertically */
+    .time-slots {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .slot-card {
+        padding: 16px 14px;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 15px;
+    }
+
+    .slot-card i {
+        font-size: 1.8rem;
+        flex-shrink: 0;
+    }
+
+    .slot-card strong {
+        font-size: 1rem;
+    }
+
+    .slot-card span {
+        font-size: 0.85rem;
+    }
+
+    /* Visa options */
+    .visa-option {
+        padding: 16px;
+        gap: 15px;
+    }
+
+    .visa-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .visa-icon i {
+        font-size: 1.5rem;
+    }
+
+    .visa-info strong {
+        font-size: 0.95rem;
+    }
+
+    .visa-info small {
+        font-size: 0.85rem;
+    }
+
+    .check-icon {
+        font-size: 1.3rem;
+    }
+
+    /* Textarea */
+    textarea {
+        padding: 14px 18px;
+        font-size: 0.95rem;
+    }
+
+    .field-hint {
+        font-size: 0.85rem;
+    }
+
+    /* Form footer */
+    .form-footer-section {
+        padding: 25px 18px;
+        border-radius: 18px;
+    }
+
+    .privacy-box {
+        padding: 18px;
+        gap: 15px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+    }
+
+    .privacy-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .privacy-icon i {
+        font-size: 1.3rem;
+    }
+
+    .privacy-text h4 {
+        font-size: 1rem;
+    }
+
+    .privacy-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Submit button */
+    .submit-btn-pro {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .btn-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .btn-icon i {
+        font-size: 1.6rem;
+    }
+
+    .btn-text {
+        text-align: center;
+    }
+
+    .btn-text strong {
+        font-size: 1.05rem;
+    }
+
+    .btn-text small {
+        font-size: 0.85rem;
+    }
+
+    .btn-arrow {
+        display: none;
+    }
+
+    .form-note {
+        font-size: 0.85rem;
+        margin-top: 15px;
+    }
+
+    /* IVF Support Section */
+    .ivf-support-section {
+        padding: 50px 15px 80px;
+    }
+
+    .ivf-support-container {
+        padding: 0 10px;
+    }
+
+    .ivf-support-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .ivf-support-header p {
+        font-size: 0.95rem;
+    }
+
+    .ivf-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .ivf-stat-card {
+        padding: 18px 16px;
+    }
+
+    .ivf-stat-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .ivf-stat-card p {
+        font-size: 0.85rem;
+    }
+
+    .ivf-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .ivf-item {
+        padding: 20px 16px;
+    }
+
+    .ivf-item h3 {
+        font-size: 1.05rem;
+    }
+
+    .ivf-item ul li {
+        font-size: 0.88rem;
+    }
+
+    .ivf-note {
+        padding: 16px;
+    }
+
+    .ivf-note p {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-logo-image {
+        max-height: 60px;
+    }
+
+    /* Back to top */
+    .back-to-top {
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    /* Mobile bottom buttons spacing */
+    body {
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small phones */
+    .logo-image {
+        max-height: 45px;
+        max-width: 130px;
+    }
+
+    .video-section {
+        padding: 30px 12px;
+    }
+
+    .section-title h2 {
+        font-size: 1.4rem;
+    }
+
+    .section-title p {
+        font-size: 0.9rem;
+    }
+
+    .form-section {
+        padding: 30px 10px 100px;
+    }
+
+    .form-header-pro h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-header-pro p {
+        font-size: 0.95rem;
+    }
+
+    .form-card {
+        padding: 20px 15px;
+        border-radius: 16px;
+    }
+
+    .card-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .input-group input,
+    .custom-select select,
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    .time-slots {
+        gap: 10px;
+    }
+
+    .slot-card {
+        padding: 14px 12px;
+        gap: 12px;
+    }
+
+    .slot-card i {
+        font-size: 1.6rem;
+    }
+
+    .slot-card strong {
+        font-size: 0.95rem;
+    }
+
+    .slot-card span {
+        font-size: 0.8rem;
+    }
+
+    .visa-option {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .visa-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .visa-icon i {
+        font-size: 1.3rem;
+    }
+
+    .visa-info strong {
+        font-size: 0.9rem;
+    }
+
+    .visa-info small {
+        font-size: 0.8rem;
+    }
+
+    .form-footer-section {
+        padding: 20px 15px;
+    }
+
+    .privacy-box {
+        padding: 16px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .privacy-text h4 {
+        font-size: 0.95rem;
+    }
+
+    .privacy-text p {
+        font-size: 0.85rem;
+    }
+
+    .submit-btn-pro {
+        padding: 14px 18px;
+    }
+
+    .btn-text strong {
+        font-size: 1rem;
+    }
+
+    .btn-text small {
+        font-size: 0.8rem;
+    }
+
+    .form-note {
+        font-size: 0.8rem;
+    }
+
+    .ivf-support-section {
+        padding: 40px 12px 70px;
+    }
+
+    .ivf-support-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .ivf-stat-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .ivf-item {
+        padding: 18px 14px;
+        border-radius: 14px;
+    }
+
+    .ivf-item h3 {
+        font-size: 1rem;
+    }
+
+    .ivf-item ul li {
+        font-size: 0.85rem;
+    }
+
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+        bottom: 75px;
+        right: 15px;
+    }
+}
+
+/* Landscape phone orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .video-section {
+        padding: 30px 15px;
+    }
+
+    .form-section {
+        padding: 30px 15px 80px;
+    }
+
+    .form-header-pro {
+        margin-bottom: 30px;
+    }
+
+    .form-card {
+        padding: 20px 15px;
+    }
+
+    .ivf-support-section {
+        padding: 40px 15px 70px;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .section-container {
+        overflow-x: hidden;
+    }
+
+    .form-card {
+        overflow-x: hidden;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link {
+        padding: 18px 20px;
+    }
+
+    .toggle-option {
+        padding: 16px 20px;
+        min-height: 48px;
+    }
+
+    .slot-card {
+        min-height: 60px;
+    }
+
+    .visa-option {
+        min-height: 70px;
+    }
+
+    .submit-btn-pro {
+        min-height: 60px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+}
